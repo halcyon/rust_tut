@@ -33,16 +33,15 @@ fn main() {
 
     let (f_name, l_name) = ("Derek", "Banas");
 
-    println!("It is {0} that {1} is {0}",
-             is_it_true, let_x);
+    println!("It is {0} that {1} is {0}", is_it_true, let_x);
 
     println!("{:.2}", 1.234);
 
     println!("B: {:b} H: {:x} O: {:o}", 10, 10, 10);
 
-    println!("{ten:>ws$}", ten=10, ws=5);
+    println!("{ten:>ws$}", ten = 10, ws = 5);
 
-    println!("{ten:>0ws$}", ten=10, ws=5);
+    println!("{ten:>0ws$}", ten = 10, ws = 5);
 
     println!("5 + 4 = {}", 5 + 4);
     println!("5 - 4 = {}", 5 - 4);
@@ -60,11 +59,11 @@ fn main() {
 
     let age_old = 6;
 
-    if(age_old == 5){
+    if (age_old == 5) {
         println!("Go to Kindergarten");
-    } else if(age_old > 5) && (age_old <= 18) {
+    } else if (age_old > 5) && (age_old <= 18) {
         println!("Go to grade {}", (age_old - 5));
-    } else if(age_old <= 25) && (age_old > 18){
+    } else if (age_old <= 25) && (age_old > 18) {
         println!("Go to College");
     } else {
         println!("Do what you want");
@@ -76,19 +75,19 @@ fn main() {
 
     println!("true != false = {}", true != false);
 
-    let can_vote = if (age_old >= 18) {true} else {false};
+    let can_vote = if (age_old >= 18) { true } else { false };
 
     println!("Can Vote: {}", can_vote);
 
     let mut x = 1;
 
     loop {
-        if((x % 2) == 0){
+        if ((x % 2) == 0) {
             println!("{}", x);
             x += 1;
             continue;
         }
-        if(x > 10){
+        if (x > 10) {
             break;
         }
         x += 1;
@@ -154,12 +153,12 @@ fn main() {
 
     println!("Find Best : {}", rand_string2.contains("best"));
 
-    'outer: loop{
+    'outer: loop {
         let number: i32 = 10;
         println!("Pick a Number");
 
         loop {
-            let mut line =  String::new();
+            let mut line = String::new();
             let input = stdin().read_line(&mut line);
 
             let guess: Option<i32> = input.ok().map_or(None, |_| line.trim().parse().ok());
@@ -171,16 +170,14 @@ fn main() {
                     break 'outer;
                 }
 
-                Some(n) if n < number =>
-                    println!("Too Low"),
-                Some(n) if n > number =>
-                    println!("Too High"),
+                Some(n) if n < number => println!("Too Low"),
+                Some(n) if n > number => println!("Too High"),
                 Some(_) => println!("Error"),
             }
         }
     }
 
-    let rand_array = [1,2,3];
+    let rand_array = [1, 2, 3];
 
     println!("{}", rand_array[0]);
     println!("{}", rand_array.len());
